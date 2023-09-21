@@ -3,8 +3,8 @@ using SimpleDotnetApi.Core.Domain;
 
 namespace SimpleDotnetApi.Application.Queries
 {
-	public record GetAllProductsQuery() : IRequest<IEnumerable<Product>>
-	{
+    public class GetAllProductsQuery : IRequest<IEnumerable<Product>>
+    {
 
-	}
+    }
 }
