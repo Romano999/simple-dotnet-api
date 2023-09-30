@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDotnetApi.Core", "Sim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDotnetApi.Adapter.Postgresql", "SimpleDotnetApi.Adapter.Postgresql\SimpleDotnetApi.Adapter.Postgresql.csproj", "{41547189-4168-4178-91B2-878CAA387D5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDotnetApi.Application.Test", "SimpleDotnetApi.Application.Test\SimpleDotnetApi.Application.Test.csproj", "{FDC46756-AC16-416D-AA06-4C4EF91D4E77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDotnetApi.Application.UnitTest", "SimpleDotnetApi.Application.Test\SimpleDotnetApi.Application.UnitTest.csproj", "{FDC46756-AC16-416D-AA06-4C4EF91D4E77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
