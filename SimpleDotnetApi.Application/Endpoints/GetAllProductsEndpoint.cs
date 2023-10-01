@@ -23,6 +23,7 @@ namespace SimpleDotnetApi.Application.Endpoints
 		{
 			var products = await _mediator.Send(new GetAllProductsQuery());
 
+
 			return products.Any() ? Ok(products) : NotFound();
 		}
 	}

@@ -1,19 +1,25 @@
-﻿using Npgsql;
+﻿using Microsoft.Extensions.Options;
+using Npgsql;
 using SimpleDotnetApi.Core.Database;
 using SimpleDotnetApi.Core.Domain;
+using SimpleDotnetApi.Core.Settings;
 
 namespace SimpleDotnetApi.Adapter.Postgresql
 {
 	public class ProductRepository : IProductRepository
 	{
-		public ProductRepository()
+		private readonly IOptions<DatabaseSettings> _settings;
+
+		public ProductRepository(IOptions<DatabaseSettings> settings)
 		{
+			_settings = settings;
 		}
 
 		public async Task<IEnumerable<Product>> GetAllAsync()
 		{
+			var connectionString = $"Server={_settings.Value.Server};Port={_settings.Value.Port};User Id={_settings.Value.User};Password={_settings.Value.Password};Database={_settings.Value.Database};";
 			var con = new NpgsqlConnection(
-				connectionString: "Server=localhost;Port=5432;User Id=postgres;Password=test;Database=testdb;");
+				connectionString: connectionString);
 			con.Open();
 			using var cmd = new NpgsqlCommand();
 			cmd.Connection = con;
@@ -39,8 +45,9 @@ namespace SimpleDotnetApi.Adapter.Postgresql
 
 		public async Task<Product?> GetByIdAsync(int id)
 		{
+			var connectionString = $"Server={_settings.Value.Server}t;Port={_settings.Value.Port};User Id={_settings.Value.User};Password={_settings.Value.Password};Database={_settings.Value.Database};";
 			var con = new NpgsqlConnection(
-				connectionString: "Server=localhost;Port=5432;User Id=postgres;Password=test;Database=testdb;");
+				connectionString: connectionString);
 			con.Open();
 			using var cmd = new NpgsqlCommand();
 			cmd.Connection = con;
