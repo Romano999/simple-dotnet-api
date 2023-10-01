@@ -45,7 +45,7 @@ namespace SimpleDotnetApi.Adapter.Postgresql
 
 		public async Task<Product?> GetByIdAsync(int id)
 		{
-			var connectionString = $"Server={_settings.Value.Server}t;Port={_settings.Value.Port};User Id={_settings.Value.User};Password={_settings.Value.Password};Database={_settings.Value.Database};";
+			var connectionString = $"Server={_settings.Value.Server};Port={_settings.Value.Port};User Id={_settings.Value.User};Password={_settings.Value.Password};Database={_settings.Value.Database};";
 			var con = new NpgsqlConnection(
 				connectionString: connectionString);
 			con.Open();
