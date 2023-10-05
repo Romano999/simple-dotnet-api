@@ -42,9 +42,10 @@ namespace SimpleDotnetApi.Application.UnitTest.UnitTest
 
 			// Act
 			var actualResult = await handler.Handle(request, new CancellationToken());
+			var shouldFailResult = GetProducts();
 
 			// Assert
-			Assert.That(actualResult, Is.Empty);
+			Assert.That(actualResult, Is.EqualTo(shouldFailResult));
 		}
 
 		private static IEnumerable<Product> GetProducts()
